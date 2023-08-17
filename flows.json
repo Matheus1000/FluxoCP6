@@ -1,0 +1,1108 @@
+[
+    {
+        "id": "2411e7ffdbf0b0c3",
+        "type": "tab",
+        "label": "MatheusCosta",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9871cc1acc41c752",
+        "type": "inject",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "9e29cf12d8bbae31"
+            ]
+        ]
+    },
+    {
+        "id": "9e29cf12d8bbae31",
+        "type": "http request",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q=Sao+Paulo,BR&appid=0e199ebe4ed2f029c7729624c12f89a5",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "fa4c028229a4ab4c"
+            ]
+        ]
+    },
+    {
+        "id": "fa4c028229a4ab4c",
+        "type": "json",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "148cc456404f6fa6",
+                "61bbc95c034b09f4",
+                "2b1f2aafe77bdb58",
+                "503cc5d9d2aef73c",
+                "0c90bf3eaaf16ecb",
+                "ade0a6401d7f1654",
+                "83184bde76234a80"
+            ]
+        ]
+    },
+    {
+        "id": "148cc456404f6fa6",
+        "type": "debug",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d34a1a05c4c00e96",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "4ab853299acd1020",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "32742f46601488be",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "4ab853299acd1020",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Mínimo",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7dbaaed4f1589658",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "4ab853299acd1020",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Máximo",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "bc3df218b4d2212f",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "af97384c04972fce",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Vento",
+        "label": "Km/h",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7495c93c6cf19387",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "cd778bfe479d226c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Umidade do ar",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "cf651548feb80b35",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "3fab97d70d32f69a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensação termica",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "61bbc95c034b09f4",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 1",
+        "func": "msg.payload = Math.round(msg.payload.main.temp-273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "d34a1a05c4c00e96",
+                "b2f9808942dd5cd5"
+            ]
+        ]
+    },
+    {
+        "id": "2b1f2aafe77bdb58",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 2",
+        "func": "msg.payload = Math.round(msg.payload.main.temp_min-273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "32742f46601488be"
+            ]
+        ]
+    },
+    {
+        "id": "503cc5d9d2aef73c",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 3",
+        "func": "msg.payload = Math.round(msg.payload.main.temp_max-273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "7dbaaed4f1589658"
+            ]
+        ]
+    },
+    {
+        "id": "0c90bf3eaaf16ecb",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 4",
+        "func": "msg.payload = Math.round(msg.payload.main.feels_like - 273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "cf651548feb80b35"
+            ]
+        ]
+    },
+    {
+        "id": "00e5d1e75401c92f",
+        "type": "json",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 110,
+        "y": 780,
+        "wires": [
+            [
+                "b97cb49e311974b0",
+                "a172bb91278ec101",
+                "0101eb7d964ce433",
+                "e39ccdf35b80517e",
+                "17413c5516f87034",
+                "eb935a6ba2f84531",
+                "2480169bbbd221a0"
+            ]
+        ]
+    },
+    {
+        "id": "b97cb49e311974b0",
+        "type": "debug",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 100,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "f603b15d2e603aea",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "fd55ee2b49427e29",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 510,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "486a2fc2e2711c91",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "fd55ee2b49427e29",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Mínimo",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "cce9fce7fa1e85cd",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "fd55ee2b49427e29",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Máximo",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "6bc3afb0ab1baab5",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "825307fb671bb33c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Vento",
+        "label": "Km/h",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "a172bb91278ec101",
+        "type": "change",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 1000,
+        "wires": [
+            [
+                "052c65536e5f8502"
+            ]
+        ]
+    },
+    {
+        "id": "213da7bd45d26a3e",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "5db4aa86dd298cad",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensação termica",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00aa00",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "0101eb7d964ce433",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 5",
+        "func": "msg.payload = Math.round(msg.payload.main.temp-273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "f603b15d2e603aea",
+                "553cf86a526dafad"
+            ]
+        ]
+    },
+    {
+        "id": "e39ccdf35b80517e",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 6",
+        "func": "msg.payload = Math.round(msg.payload.main.temp_min-273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 800,
+        "wires": [
+            [
+                "486a2fc2e2711c91"
+            ]
+        ]
+    },
+    {
+        "id": "17413c5516f87034",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 7",
+        "func": "msg.payload = Math.round(msg.payload.main.temp_max-273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 860,
+        "wires": [
+            [
+                "cce9fce7fa1e85cd"
+            ]
+        ]
+    },
+    {
+        "id": "eb935a6ba2f84531",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 8",
+        "func": "msg.payload = Math.round(msg.payload.main.feels_like - 273.15)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1080,
+        "wires": [
+            [
+                "213da7bd45d26a3e"
+            ]
+        ]
+    },
+    {
+        "id": "9fe3a43e8fbc3047",
+        "type": "inject",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 640,
+        "wires": [
+            [
+                "e87ba6ac7936d483"
+            ]
+        ]
+    },
+    {
+        "id": "e87ba6ac7936d483",
+        "type": "http request",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q=Rio+de+Janeiro,BR&appid=0e199ebe4ed2f029c7729624c12f89a5",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 330,
+        "y": 660,
+        "wires": [
+            [
+                "00e5d1e75401c92f"
+            ]
+        ]
+    },
+    {
+        "id": "ade0a6401d7f1654",
+        "type": "change",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "7495c93c6cf19387"
+            ]
+        ]
+    },
+    {
+        "id": "83184bde76234a80",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 9",
+        "func": "msg.payload = Math.round(msg.payload.wind.speed * 3.6)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "bc3df218b4d2212f"
+            ]
+        ]
+    },
+    {
+        "id": "2480169bbbd221a0",
+        "type": "function",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "function 10",
+        "func": "msg.payload = Math.round(msg.payload.wind.speed * 3.6) \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 940,
+        "wires": [
+            [
+                "6bc3afb0ab1baab5"
+            ]
+        ]
+    },
+    {
+        "id": "052c65536e5f8502",
+        "type": "ui_gauge",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "5e9d6f64cdf74512",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Umidade do ar",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 560,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "b2f9808942dd5cd5",
+        "type": "ui_chart",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "fd55ee2b49427e29",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura Atual",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "553cf86a526dafad",
+        "type": "ui_chart",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "group": "4ab853299acd1020",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura Atual",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab328136e61c4bba",
+        "type": "mqtt in",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "topic": "matheusCosta/fiap/4sia",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fc100a4cf59faf52",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1220,
+        "wires": [
+            [
+                "184cca38493da90c"
+            ]
+        ]
+    },
+    {
+        "id": "184cca38493da90c",
+        "type": "debug",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "da5e907e4863421c",
+        "type": "mqtt out",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "topic": "matheusCosta/fiap/4sia",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc100a4cf59faf52",
+        "x": 530,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "9eaca773144ddf0d",
+        "type": "inject",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1320,
+        "wires": [
+            [
+                "da5e907e4863421c"
+            ]
+        ]
+    },
+    {
+        "id": "54f46d20bf88bf6b",
+        "type": "comment",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "São Paulo - Dash",
+        "info": "",
+        "x": 280,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "1aad94f44929b9fa",
+        "type": "comment",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "Rio de Janeiro - Dash",
+        "info": "",
+        "x": 320,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "07538090cbb3b3f4",
+        "type": "comment",
+        "z": "2411e7ffdbf0b0c3",
+        "name": "Broker",
+        "info": "",
+        "x": 290,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "4ab853299acd1020",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "fe2b2afd11b44d43",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "af97384c04972fce",
+        "type": "ui_group",
+        "name": "Vento",
+        "tab": "fe2b2afd11b44d43",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cd778bfe479d226c",
+        "type": "ui_group",
+        "name": "Umidade",
+        "tab": "fe2b2afd11b44d43",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3fab97d70d32f69a",
+        "type": "ui_group",
+        "name": "Sensação",
+        "tab": "fe2b2afd11b44d43",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fd55ee2b49427e29",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "2b8892f1349e45c3",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "825307fb671bb33c",
+        "type": "ui_group",
+        "name": "Vento",
+        "tab": "2b8892f1349e45c3",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5db4aa86dd298cad",
+        "type": "ui_group",
+        "name": "Sensação",
+        "tab": "2b8892f1349e45c3",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5e9d6f64cdf74512",
+        "type": "ui_group",
+        "name": "Umidade",
+        "tab": "2b8892f1349e45c3",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fc100a4cf59faf52",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fe2b2afd11b44d43",
+        "type": "ui_tab",
+        "name": "São Paulo",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2b8892f1349e45c3",
+        "type": "ui_tab",
+        "name": "Rio de Janeiro",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
